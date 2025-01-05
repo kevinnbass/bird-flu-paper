@@ -1,0 +1,397 @@
+2024-12-20 04:52:30,448 - INFO - Logging initialized.
+2024-12-20 04:52:30,915 - INFO - Aggregated sentiment/emotion scores saved to 'csv_raw_scores_subset/aggregated_sentiment_emotion_scores_subset.csv'.
+2024-12-20 04:52:30,919 - DEBUG - Loaded backend agg version v2.2.
+2024-12-20 04:52:30,926 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,926 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 3.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,927 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 3.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HeavyItalic.ttf', name='Lato', style='italic', variant='normal', weight=800, stretch='normal', size='scalable')) = 11.43
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BoldItalic.ttf', name='Lato', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Light.ttf', name='Lato', style='normal', variant='normal', weight=300, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Medium.ttf', name='Lato', style='normal', variant='normal', weight=500, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Regular.ttf', name='Lato', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Hairline.ttf', name='Lato', style='normal', variant='normal', weight=250, stretch='normal', size='scalable')) = 10.1925
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Semibold.ttf', name='Lato', style='normal', variant='normal', weight=600, stretch='normal', size='scalable')) = 10.24
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/rsfs10.ttf', name='rsfs10', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BlackItalic.ttf', name='Lato', style='italic', variant='normal', weight=900, stretch='normal', size='scalable')) = 11.525
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Bold.ttf', name='Lato', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Heavy.ttf', name='Lato', style='normal', variant='normal', weight=800, stretch='normal', size='scalable')) = 10.43
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HairlineItalic.ttf', name='Lato', style='italic', variant='normal', weight=250, stretch='normal', size='scalable')) = 11.1925
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/eufm10.ttf', name='eufm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-ThinItalic.ttf', name='Lato', style='italic', variant='normal', weight=275, stretch='normal', size='scalable')) = 11.16875
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Thin.ttf', name='Lato', style='normal', variant='normal', weight=275, stretch='normal', size='scalable')) = 10.16875
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/stmary10.ttf', name='stmary10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-SemiboldItalic.ttf', name='Lato', style='italic', variant='normal', weight=600, stretch='normal', size='scalable')) = 11.24
+2024-12-20 04:52:30,928 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Black.ttf', name='Lato', style='normal', variant='normal', weight=900, stretch='normal', size='scalable')) = 10.525
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Italic.ttf', name='Lato', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/esint10.ttf', name='esint10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/dsrom10.ttf', name='dsrom10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msbm10.ttf', name='msbm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/wasy10.ttf', name='wasy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msam10.ttf', name='msam10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-LightItalic.ttf', name='Lato', style='italic', variant='normal', weight=300, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,929 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-MediumItalic.ttf', name='Lato', style='italic', variant='normal', weight=500, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,929 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 2.050000.
+2024-12-20 04:52:30,975 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0.
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,975 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 3.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 3.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HeavyItalic.ttf', name='Lato', style='italic', variant='normal', weight=800, stretch='normal', size='scalable')) = 11.43
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BoldItalic.ttf', name='Lato', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,976 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Light.ttf', name='Lato', style='normal', variant='normal', weight=300, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Medium.ttf', name='Lato', style='normal', variant='normal', weight=500, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Regular.ttf', name='Lato', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Hairline.ttf', name='Lato', style='normal', variant='normal', weight=250, stretch='normal', size='scalable')) = 10.1925
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Semibold.ttf', name='Lato', style='normal', variant='normal', weight=600, stretch='normal', size='scalable')) = 10.24
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/rsfs10.ttf', name='rsfs10', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BlackItalic.ttf', name='Lato', style='italic', variant='normal', weight=900, stretch='normal', size='scalable')) = 11.525
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Bold.ttf', name='Lato', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Heavy.ttf', name='Lato', style='normal', variant='normal', weight=800, stretch='normal', size='scalable')) = 10.43
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HairlineItalic.ttf', name='Lato', style='italic', variant='normal', weight=250, stretch='normal', size='scalable')) = 11.1925
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/eufm10.ttf', name='eufm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-ThinItalic.ttf', name='Lato', style='italic', variant='normal', weight=275, stretch='normal', size='scalable')) = 11.16875
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Thin.ttf', name='Lato', style='normal', variant='normal', weight=275, stretch='normal', size='scalable')) = 10.16875
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/stmary10.ttf', name='stmary10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-SemiboldItalic.ttf', name='Lato', style='italic', variant='normal', weight=600, stretch='normal', size='scalable')) = 11.24
+2024-12-20 04:52:30,977 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Black.ttf', name='Lato', style='normal', variant='normal', weight=900, stretch='normal', size='scalable')) = 10.525
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Italic.ttf', name='Lato', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/esint10.ttf', name='esint10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/dsrom10.ttf', name='dsrom10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msbm10.ttf', name='msbm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/wasy10.ttf', name='wasy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msam10.ttf', name='msam10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-LightItalic.ttf', name='Lato', style='italic', variant='normal', weight=300, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,978 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-MediumItalic.ttf', name='Lato', style='italic', variant='normal', weight=500, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,978 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=12.0 to DejaVu Sans ('/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 2.050000.
+2024-12-20 04:52:30,988 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=14.0.
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBol.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniBolIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUni.ttf', name='STIXNonUnicode', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFiveSymReg.ttf', name='STIXSizeFiveSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymReg.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymReg.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBol.ttf', name='STIXGeneral', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Oblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 3.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralItalic.ttf', name='STIXGeneral', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansDisplay.ttf', name='DejaVu Sans Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymBol.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymBol.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,989 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizFourSymReg.ttf', name='STIXSizeFourSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizThreeSymBol.ttf', name='STIXSizeThreeSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizOneSymReg.ttf', name='STIXSizeOneSym', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerifDisplay.ttf', name='DejaVu Serif Display', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Italic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmss10.ttf', name='cmss10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans-BoldOblique.ttf', name='DejaVu Sans', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 3.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-BoldItalic.ttf', name='DejaVu Serif', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/cmb10.ttf', name='cmb10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneral.ttf', name='STIXGeneral', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HeavyItalic.ttf', name='Lato', style='italic', variant='normal', weight=800, stretch='normal', size='scalable')) = 11.43
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BoldItalic.ttf', name='Lato', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Light.ttf', name='Lato', style='normal', variant='normal', weight=300, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Medium.ttf', name='Lato', style='normal', variant='normal', weight=500, stretch='normal', size='scalable')) = 10.145
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Regular.ttf', name='Lato', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Hairline.ttf', name='Lato', style='normal', variant='normal', weight=250, stretch='normal', size='scalable')) = 10.1925
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmex10.ttf', name='cmex10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Semibold.ttf', name='Lato', style='normal', variant='normal', weight=600, stretch='normal', size='scalable')) = 10.24
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/rsfs10.ttf', name='rsfs10', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmsy10.ttf', name='cmsy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-BlackItalic.ttf', name='Lato', style='italic', variant='normal', weight=900, stretch='normal', size='scalable')) = 11.525
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Bold.ttf', name='Lato', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,990 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Heavy.ttf', name='Lato', style='normal', variant='normal', weight=800, stretch='normal', size='scalable')) = 10.43
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-HairlineItalic.ttf', name='Lato', style='italic', variant='normal', weight=250, stretch='normal', size='scalable')) = 11.1925
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/eufm10.ttf', name='eufm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmr10.ttf', name='cmr10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf', name='DejaVu Sans Mono', style='oblique', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-ThinItalic.ttf', name='Lato', style='italic', variant='normal', weight=275, stretch='normal', size='scalable')) = 11.16875
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/cmmi10.ttf', name='cmmi10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Thin.ttf', name='Lato', style='normal', variant='normal', weight=275, stretch='normal', size='scalable')) = 10.16875
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/stmary10.ttf', name='stmary10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-SemiboldItalic.ttf', name='Lato', style='italic', variant='normal', weight=600, stretch='normal', size='scalable')) = 11.24
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Black.ttf', name='Lato', style='normal', variant='normal', weight=900, stretch='normal', size='scalable')) = 10.525
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf', name='DejaVu Serif', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-Italic.ttf', name='Lato', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 2.335
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/esint10.ttf', name='esint10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/dsrom10.ttf', name='dsrom10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf', name='DejaVu Sans Mono', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', name='DejaVu Sans', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 2.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msbm10.ttf', name='msbm10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/wasy10.ttf', name='wasy10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lyx/msam10.ttf', name='msam10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-LightItalic.ttf', name='Lato', style='italic', variant='normal', weight=300, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,991 - DEBUG - findfont: score(FontEntry(fname='/usr/share/fonts/truetype/lato/Lato-MediumItalic.ttf', name='Lato', style='italic', variant='normal', weight=500, stretch='normal', size='scalable')) = 11.145
+2024-12-20 04:52:30,991 - DEBUG - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=14.0 to DejaVu Sans ('/home/kevinnbass/miniconda3/envs/statsenv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 2.050000.
+2024-12-20 04:52:37,359 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,359 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,359 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'IDAT' 132 36754
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'IDAT' 132 35647
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,360 - DEBUG - STREAM b'IDAT' 132 37957
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'IDAT' 132 34486
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,361 - DEBUG - STREAM b'IDAT' 132 37949
+2024-12-20 04:52:37,362 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,362 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,362 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,362 - DEBUG - STREAM b'IDAT' 132 36427
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IDAT' 132 34861
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IDAT' 132 33785
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,363 - DEBUG - STREAM b'IDAT' 132 37209
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'IDAT' 132 34317
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,364 - DEBUG - STREAM b'IDAT' 132 39039
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IDAT' 132 37134
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IDAT' 132 37650
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,365 - DEBUG - STREAM b'IDAT' 132 33522
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'IDAT' 132 38749
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'IDAT' 132 34871
+2024-12-20 04:52:37,366 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'IDAT' 132 41048
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'IDAT' 132 36454
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,367 - DEBUG - STREAM b'IDAT' 132 37750
+2024-12-20 04:52:37,368 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,368 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,368 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,368 - DEBUG - STREAM b'IDAT' 132 36542
+2024-12-20 04:52:37,395 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,395 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,396 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,396 - DEBUG - STREAM b'IDAT' 132 36754
+2024-12-20 04:52:37,397 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,397 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,397 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,397 - DEBUG - STREAM b'IDAT' 132 35647
+2024-12-20 04:52:37,398 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,399 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,399 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,399 - DEBUG - STREAM b'IDAT' 132 37957
+2024-12-20 04:52:37,400 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,400 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,400 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,400 - DEBUG - STREAM b'IDAT' 132 34486
+2024-12-20 04:52:37,402 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,402 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,402 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,402 - DEBUG - STREAM b'IDAT' 132 37949
+2024-12-20 04:52:37,403 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,403 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,403 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,403 - DEBUG - STREAM b'IDAT' 132 36427
+2024-12-20 04:52:37,405 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,405 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,405 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,405 - DEBUG - STREAM b'IDAT' 132 34861
+2024-12-20 04:52:37,407 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,407 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,407 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,407 - DEBUG - STREAM b'IDAT' 132 33785
+2024-12-20 04:52:37,408 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,408 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,408 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,408 - DEBUG - STREAM b'IDAT' 132 37209
+2024-12-20 04:52:37,410 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,410 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,410 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,410 - DEBUG - STREAM b'IDAT' 132 34317
+2024-12-20 04:52:37,412 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,412 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,412 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,412 - DEBUG - STREAM b'IDAT' 132 39039
+2024-12-20 04:52:37,413 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,413 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,414 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,414 - DEBUG - STREAM b'IDAT' 132 37134
+2024-12-20 04:52:37,415 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,415 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,415 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,415 - DEBUG - STREAM b'IDAT' 132 37650
+2024-12-20 04:52:37,417 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,417 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,417 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,417 - DEBUG - STREAM b'IDAT' 132 33522
+2024-12-20 04:52:37,418 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,418 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,418 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,418 - DEBUG - STREAM b'IDAT' 132 38749
+2024-12-20 04:52:37,420 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,420 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,420 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,420 - DEBUG - STREAM b'IDAT' 132 34871
+2024-12-20 04:52:37,421 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,421 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,421 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,421 - DEBUG - STREAM b'IDAT' 132 41048
+2024-12-20 04:52:37,423 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,423 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,423 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,423 - DEBUG - STREAM b'IDAT' 132 36454
+2024-12-20 04:52:37,425 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,425 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,425 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,425 - DEBUG - STREAM b'IDAT' 132 37750
+2024-12-20 04:52:37,426 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-20 04:52:37,426 - DEBUG - STREAM b'tEXt' 41 58
+2024-12-20 04:52:37,426 - DEBUG - STREAM b'pHYs' 111 9
+2024-12-20 04:52:37,426 - DEBUG - STREAM b'IDAT' 132 36542

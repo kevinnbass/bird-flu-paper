@@ -1,0 +1,9 @@
+Media Category,Measure,Sum,Count,Average
+Left,flesch_kincaid_grade_global,8297.8,790,10.503544303797467
+Left,gunning_fog_global,9555.64,790,12.095746835443038
+Scientific,flesch_kincaid_grade_global,1502.6999999999998,134,11.21417910447761
+Scientific,gunning_fog_global,1696.47,134,12.660223880597016
+Right,flesch_kincaid_grade_global,4909.0,461,10.648590021691973
+Right,gunning_fog_global,5672.15,461,12.304013015184381
+Center,flesch_kincaid_grade_global,7335.700000000001,648,11.320524691358026
+Center,gunning_fog_global,8454.630000000001,648,13.04726851851852

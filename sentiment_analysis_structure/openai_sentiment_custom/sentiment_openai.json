@@ -1,0 +1,80 @@
+[
+    {
+        "Category": "Scientific News Outlets",
+        "Fear_Fearmonger": 110,
+        "Fear_Neutral": 265,
+        "Fear_Reassuring": 87,
+        "Sentiment_Negative": 150,
+        "Sentiment_Neutral": 265,
+        "Sentiment_Positive": 47,
+        "Negative_Proportion": 0.7614213197969543,
+        "Positive_Proportion": 0.23857868020304568,
+        "Fearmonger_Proportion": 0.5583756345177665,
+        "Reassuring_Proportion": 0.4416243654822335
+    },
+    {
+        "Category": "Left News Outlets",
+        "Fear_Fearmonger": 50,
+        "Fear_Neutral": 78,
+        "Fear_Reassuring": 24,
+        "Sentiment_Negative": 63,
+        "Sentiment_Neutral": 82,
+        "Sentiment_Positive": 7,
+        "Negative_Proportion": 0.9,
+        "Positive_Proportion": 0.1,
+        "Fearmonger_Proportion": 0.6756756756756757,
+        "Reassuring_Proportion": 0.32432432432432434
+    },
+    {
+        "Category": "Lean Left News Outlets",
+        "Fear_Fearmonger": 601,
+        "Fear_Neutral": 1302,
+        "Fear_Reassuring": 496,
+        "Sentiment_Negative": 819,
+        "Sentiment_Neutral": 1348,
+        "Sentiment_Positive": 229,
+        "Negative_Proportion": 0.7814885496183206,
+        "Positive_Proportion": 0.21851145038167938,
+        "Fearmonger_Proportion": 0.5478577939835916,
+        "Reassuring_Proportion": 0.45214220601640837
+    },
+    {
+        "Category": "Centrist News Outlets",
+        "Fear_Fearmonger": 340,
+        "Fear_Neutral": 787,
+        "Fear_Reassuring": 307,
+        "Sentiment_Negative": 447,
+        "Sentiment_Neutral": 828,
+        "Sentiment_Positive": 158,
+        "Negative_Proportion": 0.7388429752066116,
+        "Positive_Proportion": 0.2611570247933884,
+        "Fearmonger_Proportion": 0.5255023183925811,
+        "Reassuring_Proportion": 0.47449768160741884
+    },
+    {
+        "Category": "Lean Right News Outlets",
+        "Fear_Fearmonger": 158,
+        "Fear_Neutral": 504,
+        "Fear_Reassuring": 198,
+        "Sentiment_Negative": 212,
+        "Sentiment_Neutral": 567,
+        "Sentiment_Positive": 80,
+        "Negative_Proportion": 0.726027397260274,
+        "Positive_Proportion": 0.273972602739726,
+        "Fearmonger_Proportion": 0.4438202247191011,
+        "Reassuring_Proportion": 0.5561797752808989
+    },
+    {
+        "Category": "Right News Outlets",
+        "Fear_Fearmonger": 147,
+        "Fear_Neutral": 312,
+        "Fear_Reassuring": 126,
+        "Sentiment_Negative": 189,
+        "Sentiment_Neutral": 343,
+        "Sentiment_Positive": 53,
+        "Negative_Proportion": 0.78099173553719,
+        "Positive_Proportion": 0.2190082644628099,
+        "Fearmonger_Proportion": 0.5384615384615384,
+        "Reassuring_Proportion": 0.46153846153846156
+    }
+]

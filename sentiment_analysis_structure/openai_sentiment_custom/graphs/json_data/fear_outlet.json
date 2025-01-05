@@ -1,0 +1,114 @@
+{"source":"AP","fear":"fearmongering","count":64,"total":402,"proportion":0.1592039801}
+{"source":"AP","fear":"neutral","count":247,"total":402,"proportion":0.6144278607}
+{"source":"AP","fear":"reassuring","count":91,"total":402,"proportion":0.2263681592}
+{"source":"Axios","fear":"fearmongering","count":16,"total":78,"proportion":0.2051282051}
+{"source":"Axios","fear":"neutral","count":43,"total":78,"proportion":0.5512820513}
+{"source":"Axios","fear":"reassuring","count":19,"total":78,"proportion":0.2435897436}
+{"source":"Breitbart","fear":"fearmongering","count":41,"total":159,"proportion":0.2578616352}
+{"source":"Breitbart","fear":"neutral","count":73,"total":159,"proportion":0.4591194969}
+{"source":"Breitbart","fear":"reassuring","count":45,"total":159,"proportion":0.2830188679}
+{"source":"Business Insider","fear":"fearmongering","count":22,"total":51,"proportion":0.431372549}
+{"source":"Business Insider","fear":"neutral","count":19,"total":51,"proportion":0.3725490196}
+{"source":"Business Insider","fear":"reassuring","count":10,"total":51,"proportion":0.1960784314}
+{"source":"CNN","fear":"fearmongering","count":47,"total":257,"proportion":0.1828793774}
+{"source":"CNN","fear":"neutral","count":160,"total":257,"proportion":0.6225680934}
+{"source":"CNN","fear":"reassuring","count":50,"total":257,"proportion":0.1945525292}
+{"source":"Daily Mail","fear":"fearmongering","count":17,"total":37,"proportion":0.4594594595}
+{"source":"Daily Mail","fear":"neutral","count":13,"total":37,"proportion":0.3513513514}
+{"source":"Daily Mail","fear":"reassuring","count":7,"total":37,"proportion":0.1891891892}
+{"source":"DailyWire","fear":"fearmongering","count":3,"total":10,"proportion":0.3}
+{"source":"DailyWire","fear":"neutral","count":3,"total":10,"proportion":0.3}
+{"source":"DailyWire","fear":"reassuring","count":4,"total":10,"proportion":0.4}
+{"source":"EpochTimes","fear":"fearmongering","count":120,"total":669,"proportion":0.1793721973}
+{"source":"EpochTimes","fear":"neutral","count":390,"total":669,"proportion":0.5829596413}
+{"source":"EpochTimes","fear":"reassuring","count":159,"total":669,"proportion":0.2376681614}
+{"source":"Financial Times","fear":"fearmongering","count":38,"total":109,"proportion":0.3486238532}
+{"source":"Financial Times","fear":"neutral","count":55,"total":109,"proportion":0.504587156}
+{"source":"Financial Times","fear":"reassuring","count":16,"total":109,"proportion":0.1467889908}
+{"source":"Forbes","fear":"fearmongering","count":39,"total":103,"proportion":0.3786407767}
+{"source":"Forbes","fear":"neutral","count":43,"total":103,"proportion":0.4174757282}
+{"source":"Forbes","fear":"reassuring","count":21,"total":103,"proportion":0.2038834951}
+{"source":"FoxBusiness","fear":"fearmongering","count":5,"total":45,"proportion":0.1111111111}
+{"source":"FoxBusiness","fear":"neutral","count":29,"total":45,"proportion":0.6444444444}
+{"source":"FoxBusiness","fear":"reassuring","count":11,"total":45,"proportion":0.2444444444}
+{"source":"FoxNews","fear":"fearmongering","count":42,"total":263,"proportion":0.1596958175}
+{"source":"FoxNews","fear":"neutral","count":172,"total":263,"proportion":0.6539923954}
+{"source":"FoxNews","fear":"reassuring","count":49,"total":263,"proportion":0.1863117871}
+{"source":"Guardian","fear":"fearmongering","count":173,"total":476,"proportion":0.3634453782}
+{"source":"Guardian","fear":"neutral","count":230,"total":476,"proportion":0.4831932773}
+{"source":"Guardian","fear":"reassuring","count":73,"total":476,"proportion":0.1533613445}
+{"source":"MarketWatch","fear":"fearmongering","count":6,"total":53,"proportion":0.1132075472}
+{"source":"MarketWatch","fear":"neutral","count":28,"total":53,"proportion":0.5283018868}
+{"source":"MarketWatch","fear":"reassuring","count":19,"total":53,"proportion":0.358490566}
+{"source":"Mother Jones","fear":"fearmongering","count":5,"total":11,"proportion":0.4545454545}
+{"source":"Mother Jones","fear":"neutral","count":5,"total":11,"proportion":0.4545454545}
+{"source":"Mother Jones","fear":"reassuring","count":1,"total":11,"proportion":0.0909090909}
+{"source":"NBCNews","fear":"fearmongering","count":33,"total":140,"proportion":0.2357142857}
+{"source":"NBCNews","fear":"neutral","count":75,"total":140,"proportion":0.5357142857}
+{"source":"NBCNews","fear":"reassuring","count":32,"total":140,"proportion":0.2285714286}
+{"source":"NPR","fear":"fearmongering","count":14,"total":65,"proportion":0.2153846154}
+{"source":"NPR","fear":"neutral","count":39,"total":65,"proportion":0.6}
+{"source":"NPR","fear":"reassuring","count":12,"total":65,"proportion":0.1846153846}
+{"source":"NYPost","fear":"fearmongering","count":25,"total":53,"proportion":0.4716981132}
+{"source":"NYPost","fear":"neutral","count":22,"total":53,"proportion":0.4150943396}
+{"source":"NYPost","fear":"reassuring","count":6,"total":53,"proportion":0.1132075472}
+{"source":"NYTimes","fear":"fearmongering","count":109,"total":388,"proportion":0.2809278351}
+{"source":"NYTimes","fear":"neutral","count":207,"total":388,"proportion":0.5335051546}
+{"source":"NYTimes","fear":"reassuring","count":72,"total":388,"proportion":0.1855670103}
+{"source":"National Review","fear":"fearmongering","count":1,"total":5,"proportion":0.2}
+{"source":"National Review","fear":"neutral","count":2,"total":5,"proportion":0.4}
+{"source":"National Review","fear":"reassuring","count":2,"total":5,"proportion":0.4}
+{"source":"Nature","fear":"fearmongering","count":19,"total":71,"proportion":0.2676056338}
+{"source":"Nature","fear":"neutral","count":43,"total":71,"proportion":0.6056338028}
+{"source":"Nature","fear":"reassuring","count":9,"total":71,"proportion":0.1267605634}
+{"source":"NewScientist","fear":"fearmongering","count":7,"total":25,"proportion":0.28}
+{"source":"NewScientist","fear":"neutral","count":12,"total":25,"proportion":0.48}
+{"source":"NewScientist","fear":"reassuring","count":6,"total":25,"proportion":0.24}
+{"source":"Newsmax","fear":"fearmongering","count":15,"total":53,"proportion":0.2830188679}
+{"source":"Newsmax","fear":"neutral","count":26,"total":53,"proportion":0.4905660377}
+{"source":"Newsmax","fear":"reassuring","count":12,"total":53,"proportion":0.2264150943}
+{"source":"Newsweek","fear":"fearmongering","count":57,"total":232,"proportion":0.2456896552}
+{"source":"Newsweek","fear":"neutral","count":119,"total":232,"proportion":0.5129310345}
+{"source":"Newsweek","fear":"reassuring","count":56,"total":232,"proportion":0.2413793103}
+{"source":"Politico","fear":"fearmongering","count":18,"total":64,"proportion":0.28125}
+{"source":"Politico","fear":"neutral","count":28,"total":64,"proportion":0.4375}
+{"source":"Politico","fear":"reassuring","count":18,"total":64,"proportion":0.28125}
+{"source":"Reuters","fear":"fearmongering","count":200,"total":937,"proportion":0.2134471718}
+{"source":"Reuters","fear":"neutral","count":542,"total":937,"proportion":0.5784418356}
+{"source":"Reuters","fear":"reassuring","count":195,"total":937,"proportion":0.2081109925}
+{"source":"STAT","fear":"fearmongering","count":62,"total":319,"proportion":0.1943573668}
+{"source":"STAT","fear":"neutral","count":190,"total":319,"proportion":0.5956112853}
+{"source":"STAT","fear":"reassuring","count":67,"total":319,"proportion":0.210031348}
+{"source":"SciAm","fear":"fearmongering","count":22,"total":47,"proportion":0.4680851064}
+{"source":"SciAm","fear":"neutral","count":20,"total":47,"proportion":0.4255319149}
+{"source":"SciAm","fear":"reassuring","count":5,"total":47,"proportion":0.1063829787}
+{"source":"Slate","fear":"fearmongering","count":2,"total":16,"proportion":0.125}
+{"source":"Slate","fear":"neutral","count":10,"total":16,"proportion":0.625}
+{"source":"Slate","fear":"reassuring","count":4,"total":16,"proportion":0.25}
+{"source":"The Daily Beast","fear":"fearmongering","count":10,"total":30,"proportion":0.3333333333}
+{"source":"The Daily Beast","fear":"neutral","count":18,"total":30,"proportion":0.6}
+{"source":"The Daily Beast","fear":"reassuring","count":2,"total":30,"proportion":0.0666666667}
+{"source":"The Intercept","fear":"fearmongering","count":3,"total":12,"proportion":0.25}
+{"source":"The Intercept","fear":"neutral","count":6,"total":12,"proportion":0.5}
+{"source":"The Intercept","fear":"reassuring","count":3,"total":12,"proportion":0.25}
+{"source":"TheAtlantic","fear":"fearmongering","count":13,"total":33,"proportion":0.3939393939}
+{"source":"TheAtlantic","fear":"neutral","count":13,"total":33,"proportion":0.3939393939}
+{"source":"TheAtlantic","fear":"reassuring","count":7,"total":33,"proportion":0.2121212121}
+{"source":"TheBlaze","fear":"fearmongering","count":4,"total":10,"proportion":0.4}
+{"source":"TheBlaze","fear":"neutral","count":3,"total":10,"proportion":0.3}
+{"source":"TheBlaze","fear":"reassuring","count":3,"total":10,"proportion":0.3}
+{"source":"USA Today","fear":"fearmongering","count":59,"total":289,"proportion":0.2041522491}
+{"source":"USA Today","fear":"neutral","count":158,"total":289,"proportion":0.5467128028}
+{"source":"USA Today","fear":"reassuring","count":72,"total":289,"proportion":0.2491349481}
+{"source":"Vox","fear":"fearmongering","count":17,"total":50,"proportion":0.34}
+{"source":"Vox","fear":"neutral","count":26,"total":50,"proportion":0.52}
+{"source":"Vox","fear":"reassuring","count":7,"total":50,"proportion":0.14}
+{"source":"WSJ","fear":"fearmongering","count":24,"total":101,"proportion":0.2376237624}
+{"source":"WSJ","fear":"neutral","count":62,"total":101,"proportion":0.6138613861}
+{"source":"WSJ","fear":"reassuring","count":15,"total":101,"proportion":0.1485148515}
+{"source":"WaPo","fear":"fearmongering","count":46,"total":189,"proportion":0.2433862434}
+{"source":"WaPo","fear":"neutral","count":96,"total":189,"proportion":0.5079365079}
+{"source":"WaPo","fear":"reassuring","count":47,"total":189,"proportion":0.2486772487}
+{"source":"WashTimes","fear":"fearmongering","count":8,"total":40,"proportion":0.2}
+{"source":"WashTimes","fear":"neutral","count":21,"total":40,"proportion":0.525}
+{"source":"WashTimes","fear":"reassuring","count":11,"total":40,"proportion":0.275}

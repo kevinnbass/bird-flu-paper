@@ -1,0 +1,3 @@
+2025-01-03 18:10:48,830 - INFO - Starting the file processing...
+2025-01-03 18:10:48,830 - INFO - Using existing cache. To clear cache, rerun the script with '--clear-cache' flag.
+2025-01-03 18:10:48,830 - INFO - Extracting articles based on the specified divider.

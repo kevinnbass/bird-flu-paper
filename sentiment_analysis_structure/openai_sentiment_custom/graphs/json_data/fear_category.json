@@ -1,0 +1,18 @@
+{"category":"Center","fear":"fearmongering","count":340,"total":1434,"proportion":0.2370990237}
+{"category":"Center","fear":"neutral","count":787,"total":1434,"proportion":0.5488145049}
+{"category":"Center","fear":"reassuring","count":307,"total":1434,"proportion":0.2140864714}
+{"category":"Lean Left","fear":"fearmongering","count":601,"total":2399,"proportion":0.2505210504}
+{"category":"Lean Left","fear":"neutral","count":1302,"total":2399,"proportion":0.5427261359}
+{"category":"Lean Left","fear":"reassuring","count":496,"total":2399,"proportion":0.2067528137}
+{"category":"Lean Right","fear":"fearmongering","count":158,"total":860,"proportion":0.1837209302}
+{"category":"Lean Right","fear":"neutral","count":504,"total":860,"proportion":0.5860465116}
+{"category":"Lean Right","fear":"reassuring","count":198,"total":860,"proportion":0.2302325581}
+{"category":"Left","fear":"fearmongering","count":50,"total":152,"proportion":0.3289473684}
+{"category":"Left","fear":"neutral","count":78,"total":152,"proportion":0.5131578947}
+{"category":"Left","fear":"reassuring","count":24,"total":152,"proportion":0.1578947368}
+{"category":"Right","fear":"fearmongering","count":147,"total":585,"proportion":0.2512820513}
+{"category":"Right","fear":"neutral","count":312,"total":585,"proportion":0.5333333333}
+{"category":"Right","fear":"reassuring","count":126,"total":585,"proportion":0.2153846154}
+{"category":"Scientific","fear":"fearmongering","count":110,"total":462,"proportion":0.2380952381}
+{"category":"Scientific","fear":"neutral","count":265,"total":462,"proportion":0.5735930736}
+{"category":"Scientific","fear":"reassuring","count":87,"total":462,"proportion":0.1883116883}
