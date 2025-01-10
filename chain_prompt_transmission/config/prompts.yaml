@@ -1,0 +1,310 @@
+# prompts.yaml
+
+affirm_transmissible_extract:
+  description: "Extract statements about bird flu transmission potential"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+        
+    Systematically check the article text below for any statements that suggest, imply, or explicitly assert that bird flu virus has the potential to, IN THE FUTURE, become more transmissible to humans, start to spread/transmit human-to-human, or become a pandemic.
+
+    Examples of statements to include:
+
+    "We might have an influenza pandemic." <- [Potential future pandemic]
+
+    "H5N1 is a virus that scientists fear might one day trigger a pandemic." <- [Potential future pandemic]
+
+    "The flu strain historically has posed almost no risk to humans, but public experts remain concerned about the possibility that it could jump across species." <- [Potential future increased transmissibility to humans]
+
+    "It's abundantly clear that no one knows for sure where bird flu is heading: Will it be confined to cattle, or will it spread to other species, including humans?" <- [Potential future increased transmissibility to humans]
+
+    "We need to be investing in pandemic preparedness." <- [Implied potential future pandemic]
+
+    "There is surprisingly inadequate surveillance, limited testing capacity, and a dangerous lack of access to health care in the rural regions that are most likely to be initially affected if H5N1 spills over into humans." <- [Potential future increased transmissibility to humans]
+
+    "One of the things we learned in Covid is that you need to have established relationships before there is any sort of public health emergency." <- [Implied potential future pandemic through Covid comparison]
+
+    "I sat with members of Congress in meeting after meeting educating them all on the potential that this was out there and showing them we had a virus that was transmitting between animals, and that we now had cases where they've gone from animals to people." <- [Potential future increased transmissibility to humans by extrapolating from recent alleged increases in transmissibility, with emphasis on 'potential', implying more increases]
+
+    "The bird flu outbreak is "concerning, but we can't yet say whether it's going to really become a major problem that the public at large needs to worry about," Eisenberg said. "It's enough of a concern that we should certainly be doing everything we can to make sure that it doesn't turn into a bigger problem."" <- [Potential future increased transmissibility to humans]
+
+    "The outbreak could be halted before the virus evolved into a form that could spread readily between humans." <- [Potential future increased human-to-human transmission]
+
+    Respond ONLY with a JSON object in the format:
+
+    {
+      "statements": [
+        "statement 1",
+        "statement 2"
+      ],
+      "individual_statements": [
+        {
+          "statement": "statement 1",
+          "statement_id": "affirm_transmissible_statement_extract_1"
+          /* "explanation": "explanation 1" <-- COMMENTED OUT */
+        },
+        {
+          "statement": "statement 2",
+          "statement_id": "affirm_transmissible_statement_extract_2"
+          /* "explanation": "explanation 2" <-- COMMENTED OUT */
+        }
+      ]
+    }
+
+    Article Text: {fulltext}
+
+
+affirm_transmissible_contextualize:
+  description: "Contextualize extracted statements"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    Below you will find:
+    1. The original fulltext article
+    2. A list of statements extracted from that article that explain scientific/biological/epidemiological mechanisms for bird flu transmission or pandemic potential
+
+    For each statement in the list:
+    1. Locate it within the fulltext
+    2. Examine the surrounding sentences (before and after)
+    3. If the surrounding sentences provide important additional context that helps explain the mechanism or makes the explanation more complete, include those sentences
+    4. If the surrounding context doesn't add meaningful information about the mechanism, leave the statement unchanged
+
+    Output format should be a JSON object with three arrays:
+    1. "context_added": Statements where surrounding context was added, with the original statement embedded within the longer context
+    2. "unchanged": Original statements where no additional context was needed
+    3. "all_statements": Combined pool of both context-added and unchanged statements
+
+    For example:
+
+    Input statement: "The virus was mutating fairly rapidly in animals."
+
+    If the fulltext contains:
+    "Scientists monitored the outbreak closely. The virus was mutating fairly rapidly in animals, specifically in populations of wild birds where constant transmission allowed for quick evolution. This raised concerns about adaptation to new hosts."
+
+    The JSON output would include:
+    - In context_added: "The virus was mutating fairly rapidly in animals, specifically in populations of wild birds where constant transmission allowed for quick evolution. This raised concerns about adaptation to new hosts."
+    - In unchanged: [would not include this statement since context was added]
+    - In all_statements: The expanded version from context_added
+
+    Respond ONLY with a JSON object in the format:
+
+    {
+      "context_added": [
+        "statement 1 with context"
+      ],
+      "unchanged": [
+        "statement 2 without needed context"
+      ],
+      "all_statements": [
+        "statement 1 with context",
+        "statement 2 without needed context"
+      ],
+      "individual_statements": [
+        {
+          "statement": "statement 1 with context",
+          "statement_id": "affirm_transmissible_statement_contextualize_1",
+          "context_added": true
+          /* "explanation": "explanation 1" <-- COMMENTED OUT */
+        },
+        {
+          "statement": "statement 2 without needed context",
+          "statement_id": "affirm_transmissible_statement_contextualize_2",
+          "context_added": false
+          /* "explanation": "explanation 2" <-- COMMENTED OUT */
+        }
+      ]
+    }
+
+    Original Fulltext: {fulltext}
+    Extracted Statements: {statements_list}
+
+
+affirm_transmissible_exclude_1_temporal:
+  description: "Temporal exclusion of statements"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+            
+    Step 1: Systematically exclude any statements that do NOT address or suggest FUTURE potential but rather only address or suggest PRESENT or IMMEDIATE risk.
+
+    Examples of statements to exclude:
+
+    "The avian influenza strain known as H5N1 is killing an unprecedented number of mating pairs of the national symbol birds, University of Georgia researchers concluded in a study published in Nature's Scientific Reports." <- [Current impact observation or future human implications]
+
+    "This sector of workers is not only at the very, very highest risk because they're having that direct, intimate contact with discharge, raw milk, with infected animals, but they're also at the very, very highest level of risk in terms of having no social safety net." <- [Current risk assessment without future implications]
+
+    "Currently, dairy workers are among the people who are most at risk of avian influenza, and many are disempowered migrant workers who face structural barriers to accessing health care." <- [Current risk and access issues, no future implications]
+
+    "Scientists have long worried about the potential for an H5N1 strain to jump into humans and cause a pandemic." <- [States concern without explaining mechanism]
+
+    "The risk to humans is currently low because the disease has not mutated to spread person-to-person." <- [Current risk with current mechanism only]
+
+    "The viruses that have been detected in cattle and in other animals in these farms don't contain any mutations that would indicate increased transmissibility or pathogenesis to humans." <- [Current genetic assessment only]
+
+    "The first signs that H5N1 or any new flu virus was starting to spread from person to person would trigger a race to produce massive amounts of vaccine to try to mitigate the damage a flu pandemic might be expected to cause." <- [Describes response plan rather than transmission mechanism]
+
+    Step 2: For each statement that PASSES ALL criteria, include it in the output numbered sequentially.
+
+    Respond ONLY with a JSON object in the format:
+
+    {
+      "statements": [
+        "statement 1",
+        "statement 2"
+      ],
+      "individual_statements": [
+        {
+          "statement": "statement 1",
+          "statement_id": "affirm_transmissible_statement_exclude_1_temporal_1"
+          /* "explanation": "explanation 1" <-- COMMENTED OUT */
+        },
+        {
+          "statement": "statement 2",
+          "statement_id": "affirm_transmissible_statement_exclude_1_temporal_2"
+          /* "explanation": "explanation 2" <-- COMMENTED OUT */
+        }
+      ]
+    }
+
+    Statements to check: {all_statements}
+
+
+affirm_transmissible_exclude_2_blanket_v_mechanism:
+  description: "Mechanism vs blanket statement selector"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    Step 1: For each statement, determine if it addresses SCIENTIFIC EXPLANATIONS or BIOLOGICAL or EPIDEMIOLOGICAL MECHANISMS explaining WHY or HOW bird flu might develop this potential.
+
+    Step 2: Sort the statements into two lists:
+    1. INCLUDED - Statements that provide mechanisms
+    2. EXCLUDED - Statements that don't provide mechanisms 
+
+    Examples of statements to exclude (these should go in the EXCLUDED list):
+    "We might have an influenza pandemic." <- [Potential future pandemic, but no mechanism]
+    "H5N1 is a virus that scientists fear might one day trigger a pandemic." <- [Potential future pandemic, but no mechanism]
+    "The virus to date has not acquired the capacity to spread easily from person to person and the fears that an H5N1 pandemic might be looming have faded." <- [Statement about current status without explaining mechanism]
+    "The flu strain historically has posed almost no risk to humans, but public experts remain concerned about the possibility that it could jump across species." <- [Potential future increased transmissibility to humans, but no mechanism]
+    "The bird flu outbreak is "concerning, but we can't yet say whether it's going to really become a major problem that the public at large needs to worry about," Eisenberg said. "It's enough of a concern that we should certainly be doing everything we can to make sure that it doesn't turn into a bigger problem."" <- [Potential future increased transmissibility to humans, but no mechanism]
+    "The current situation has shown that dairy farms may seed new outbreaks that quickly spread, as has long been the case on poultry and pig farms, several experts said." <- [No mechanism for future human transmission]
+    "The avian influenza strain known as H5N1 is killing an unprecedented number of mating pairs of the national symbol birds, University of Georgia researchers concluded in a study published in Nature's Scientific Reports." <- [Current impact observation, no mechanism or human implications]
+    "It's abundantly clear that no one knows for sure where bird flu is heading: Will it be confined to cattle, or will it spread to other species, including humans?" <- [Raises possibility without explaining mechanism]
+    "This sector of workers is not only at the very, very highest risk because they're having that direct, intimate contact with discharge, raw milk, with infected animals, but they're also at the very, very highest level of risk in terms of having no social safety net." <- [Current risk assessment without mechanism]
+    "Currently, dairy workers are among the people who are most at risk of avian influenza, and many are disempowered migrant workers who face structural barriers to accessing health care." <- [Current risk and access issues, no mechanism]
+    "The first signs that H5N1 or any new flu virus was starting to spread from person to person would trigger a race to produce massive amounts of vaccine to try to mitigate the damage a flu pandemic might be expected to cause." <- [Describes response plan rather than transmission mechanism]
+
+    Respond with a JSON object in the format:
+
+    {
+      "mechanism_statements": [
+        "mechanism statement 1",
+        "mechanism statement 2"
+      ],
+      "blanket_statements": [
+        "blanket statement 1",
+        "blanket statement 2"
+      ],
+      "individual_statements": [
+        {
+          "statement": "mechanism statement 1",
+          "statement_id": "affirm_transmissible_statement_exclude_2_mechanism_1"
+          /* "explanation": "explanation 1" <-- COMMENTED OUT */
+        },
+        {
+          "statement": "blanket statement 1",
+          "statement_id": "affirm_transmissible_statement_exclude_2_blanket_1"
+          /* "explanation": "explanation 2" <-- COMMENTED OUT */
+        }
+      ]
+    }
+
+    Statements to check: {all_statements}
+
+
+affirm_transmissible_validate:
+  description: "Validate statements against source text"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    Compare each provided statement against the original fulltext article for validation.
+
+    For each statement:
+    1. Locate it within the fulltext
+    2. Verify that it accurately represents the content and context
+    3. If the statement differs slightly from the source text, replace it with the EXACT text from the source
+    4. If the statement cannot be found in the source text or differs significantly, discard it
+    5. Check for any significant discrepancies or misrepresentations
+
+    Examples of acceptable minor variations that should be corrected to source text:
+    - Statement: "Scientists worry the virus might mutate to become more transmissible"
+      Source: "Scientists worry the virus could mutate to become more transmissible"
+      Action: Use source text version
+      
+    - Statement: "The virus has shown signs it could adapt to humans"
+      Source: "The virus has shown signs that it could adapt to humans"
+      Action: Use source text version
+
+    Examples of unacceptable variations that should be discarded:
+    - Statement: "Scientists are concerned about viral mutations"
+      Source: "Scientists worry the virus could mutate to become more transmissible"
+      Action: Discard (too different from source)
+      
+    - Statement: "Research suggests the virus might adapt to human transmission"
+      Source: No close match in text
+      Action: Discard (no matching source text)
+
+    Sort the statements into categories:
+    1. VALIDATED - Statements that match the source text (after correction if needed)
+    2. DISCARDED - Statements with significant discrepancies or that cannot be found
+
+    Respond with a JSON object in the format:
+
+    {
+        "mechanism_validated": [
+            {
+                "statement": "exact source text here",
+                "statement_id": "affirm_transmissible_statement_mechanism_validated_1",
+                "original": "original extracted statement here",
+                "location": "surrounding context"
+                /* "explanation": "explanation 1" <-- COMMENTED OUT */
+            }
+        ],
+        "mechanism_discarded": [
+            {
+                "statement": "discarded statement",
+                "statement_id": "affirm_transmissible_statement_mechanism_discarded_1",
+                "reason": "reason for discard"
+                /* "explanation": "explanation 2" <-- COMMENTED OUT */
+            }
+        ],
+        "blanket_validated": [
+            {
+                "statement": "exact source text here",
+                "statement_id": "affirm_transmissible_statement_blanket_validated_1",
+                "original": "original extracted statement here",
+                "location": "surrounding context"
+                /* "explanation": "explanation 3" <-- COMMENTED OUT */
+            }
+        ],
+        "blanket_discarded": [
+            {
+                "statement": "discarded statement",
+                "statement_id": "affirm_transmissible_statement_blanket_discarded_1",
+                "reason": "reason for discard"
+                /* "explanation": "explanation 4" <-- COMMENTED OUT */
+            }
+        ],
+        "individual_statements": [
+            {
+                "statement": "exact or corrected text here",
+                "statement_id": "affirm_transmissible_statement_validation_individual_1",
+                "original": "original text here",
+                "location": "surrounding context",
+                "validated": true,
+                "reason": "reason for discard if not validated"
+                /* "explanation": "explanation 5" <-- COMMENTED OUT */
+            }
+        ]
+    }
+
+    Original Fulltext: {fulltext}
+    Mechanism Statements to Validate: {mechanism_statements}
+    Blanket Statements to Validate: {blanket_statements}

@@ -1,0 +1,23 @@
+#config.yaml
+api:
+  model: "deepseek-chat"
+  max_tokens: 8192
+  temperature: 0
+  base_url: "https://api.deepseek.com"
+
+files:
+  input: "distribution_set_final_deepseek.jsonl"
+  output:
+    base_name: "transmission_chain"
+    base: "transmission_chain.jsonl"
+    discarded: "transmission_chain_discarded.jsonl"
+
+logging:
+  filename: "logs/processing_deepseek.log"
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+processing:
+  id_range:
+    min: 475
+    max: 485
