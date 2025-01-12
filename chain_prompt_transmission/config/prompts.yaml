@@ -1,5 +1,3 @@
-# prompts.yaml
-
 affirm_transmissible_extract:
   description: "Extract statements about bird flu transmission potential"
   prompt: |
@@ -31,26 +29,28 @@ affirm_transmissible_extract:
 
     Respond ONLY with a JSON object in the format:
 
-    {
+    {{
       "statements": [
         "statement 1",
         "statement 2"
       ],
       "individual_statements": [
-        {
+        {{
           "statement": "statement 1",
           "statement_id": "affirm_transmissible_statement_extract_1"
           /* "explanation": "explanation 1" <-- COMMENTED OUT */
-        },
-        {
+        }},
+        {{
           "statement": "statement 2",
           "statement_id": "affirm_transmissible_statement_extract_2"
           /* "explanation": "explanation 2" <-- COMMENTED OUT */
-        }
+        }}
       ]
-    }
+    }}
 
     Article Text: {fulltext}
+
+    IMPORTANT: You must preserve these statement_ids exactly as shown above (e.g. "affirm_transmissible_statement_extract_1"). Do not renumber or skip any IDs.
 
 
 affirm_transmissible_contextualize:
@@ -65,13 +65,13 @@ affirm_transmissible_contextualize:
     For each statement in the list:
     1. Locate it within the fulltext
     2. Examine the surrounding sentences (before and after)
-    3. If the surrounding sentences provide important additional context that helps explain the mechanism or makes the explanation more complete, include those sentences
-    4. If the surrounding context doesn't add meaningful information about the mechanism, leave the statement unchanged
+    3. If the surrounding sentences provide important additional context that helps explain the mechanism or makes the explanation more complete, **extract ONLY those newly appended context sentences** (not the original statement) and place them into the `context_added` array. (New Instruction)
+    4. If the surrounding context doesn't add meaningful information about the mechanism, leave the statement unchanged.
 
     Output format should be a JSON object with three arrays:
-    1. "context_added": Statements where surrounding context was added, with the original statement embedded within the longer context
+    1. "context_added": Statements where additional context was found, but **only** the newly appended portion (not the original statement). (New Instruction)
     2. "unchanged": Original statements where no additional context was needed
-    3. "all_statements": Combined pool of both context-added and unchanged statements
+    3. "all_statements": Combined pool of both context-only entries and unchanged statements
 
     For example:
 
@@ -81,41 +81,203 @@ affirm_transmissible_contextualize:
     "Scientists monitored the outbreak closely. The virus was mutating fairly rapidly in animals, specifically in populations of wild birds where constant transmission allowed for quick evolution. This raised concerns about adaptation to new hosts."
 
     The JSON output would include:
-    - In context_added: "The virus was mutating fairly rapidly in animals, specifically in populations of wild birds where constant transmission allowed for quick evolution. This raised concerns about adaptation to new hosts."
+    - In context_added: "specifically in populations of wild birds where constant transmission allowed for quick evolution. This raised concerns about adaptation to new hosts."  
+      *(Rather than embedding the original statement again, we only place the appended snippet in `context_added`.)*
     - In unchanged: [would not include this statement since context was added]
-    - In all_statements: The expanded version from context_added
+    - In all_statements: The appended context snippet plus any unchanged statements.
+
+    More examples:
+
+      Input statement: "This is an infection that has epidemic and pandemic potential."
+      Fulltext: "This is an infection that has epidemic and pandemic potential. I don’t know if people recognize how big a deal this is."
+      Output: "I don’t know if people recognize how big a deal this is."
+      Explanation: Context emphasized the risk, so it goes in context_added.
+
+      Input statement: "This outbreak signals the very real potential for the emergence of mammal-to-mammal transmission."
+      Fulltext: "This outbreak signals the very real potential for the emergence of mammal-to-mammal transmission. None of the workers, who wore protective gear, at the farm seem to have gotten infected. But some scientists worry that minks could be a kind of stepping stone for the virus to make a jump to humans."
+      Output: "None of the workers, who wore protective gear, at the farm seem to have gotten infected. But some scientists worry that minks could be a kind of stepping stone for the virus to make a jump to humans."
+      Explanation: Context about minks is appended.
+
+      Input statement: "This is a clear mechanism for an H5 pandemic to start."
+      Fulltext: "This is a clear mechanism for an H5 pandemic to start. 'This is incredibly concerning,' Tom Peacock, a virologist at Imperial College London, told Science Magazine. He also noted that minks’ respiratory systems make them particularly good host species for viruses that can infect humans."
+      Output: "'This is incredibly concerning,' Tom Peacock, a virologist at Imperial College London, told Science Magazine. He also noted that minks’ respiratory systems make them particularly good host species for viruses that can infect humans."
+      Explanation: Additional text about minks is appended.
+
+      Input statement: "An Even Deadlier Pandemic Could Soon Be Here."
+      Fulltext: "An Even Deadlier Pandemic Could Soon Be Here. Journalist Zeynep Tufekci, who has extensively covered the COVID-19 pandemic, wrote in a New York Times opinion piece published this week titled 'An Even Deadlier Pandemic Could Soon Be Here.' She also spoke to Peacock, who noted that minks’ respiratory systems make them particularly good host species for viruses that can infect humans."
+      Output: "Journalist Zeynep Tufekci, who has extensively covered the COVID-19 pandemic, wrote in a New York Times opinion piece published this week titled 'An Even Deadlier Pandemic Could Soon Be Here.' She also spoke to Peacock, who noted that minks’ respiratory systems make them particularly good host species for viruses that can infect humans."
+      Explanation: Additional context about Tufekci’s commentary is appended.
+
+      Input statement: "I really do think it's very likely that we will, at some time it's not a question of if, it's more of a question of when we will have a bird flu pandemic."
+      Fulltext: "I really do think it's very likely that we will, at some time it's not a question of if, it's more of a question of when we will have a bird flu pandemic. A wide variety of mammals have been found harboring the virus including cows, cats, ferrets and elephant seals."
+      Output: "A wide variety of mammals have been found harboring the virus including cows, cats, ferrets and elephant seals."
+      Explanation: Additional snippet appended.
+
+      Input statement: "And as I said, I think it's just a matter of time."
+      Fulltext: "And as I said, I think it's just a matter of time. Another expert expressed similar concern."
+      Output: "Another expert expressed similar concern."
+      Explanation: Additional snippet appended.
 
     Respond ONLY with a JSON object in the format:
 
-    {
+    {{
       "context_added": [
-        "statement 1 with context"
+        "context snippet 1",
+        "context snippet 2"
       ],
       "unchanged": [
-        "statement 2 without needed context"
+        "original statement 1 (if no context needed)"
       ],
       "all_statements": [
-        "statement 1 with context",
-        "statement 2 without needed context"
+        "context snippet 1",
+        "original statement 2 (if unchanged)",
+        "context snippet 2"
       ],
       "individual_statements": [
-        {
-          "statement": "statement 1 with context",
+        {{
+          "statement": "context snippet 1",
           "statement_id": "affirm_transmissible_statement_contextualize_1",
           "context_added": true
           /* "explanation": "explanation 1" <-- COMMENTED OUT */
-        },
-        {
-          "statement": "statement 2 without needed context",
+        }},
+        {{
+          "statement": "original statement 2 (if unchanged)",
           "statement_id": "affirm_transmissible_statement_contextualize_2",
           "context_added": false
           /* "explanation": "explanation 2" <-- COMMENTED OUT */
-        }
+        }}
       ]
-    }
+    }}
 
     Original Fulltext: {fulltext}
     Extracted Statements: {statements_list}
+
+    IMPORTANT REQUIREMENTS FOR THIS TASK:
+
+    1. For each input statement_id, ONLY replace "extract" with "contextualize" while preserving its numeric suffix. For example, if the input statement_id was "affirm_transmissible_statement_extract_1", your output statement_id must be "affirm_transmissible_statement_contextualize_1". Do not skip or reorder IDs.
+
+    2. For each input statement, you must output exactly one contextualized statement, **preserving the numeric suffix** in its statement_id. For instance, "affirm_transmissible_statement_extract_2" must become "affirm_transmissible_statement_contextualize_2". Do not skip or merge any statements.
+
+    3. Even if a statement’s text appears (partly or wholly) in the contextualization for a previous statement, you must **still** produce a separate contextualized version for it. That is, each input statement should have its own unique output entry, even if that leads to some repetition of text.
+
+    4. The final JSON must contain exactly N entries in the "individual_statements" array, in the **same order** as the input. If you detect overlap between statement #i and #i+1, do not combine or delete any statement; simply provide repeated context if necessary.
+
+    5. Failure to produce a 1:1 correspondence between the extracts and the contextualized statements (same item count and IDs) violates these instructions.
+
+
+
+
+affirm_transmissible_trim:
+  description: "Remove unneeded added context from contextualized statements"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    You are provided with two sets of statements:
+    1) "original_extract": The original statements extracted from the article
+    2) "context_added": Longer statements in which additional context was appended around each original statement
+
+    Your task:
+    1. For each pair (original_extract[i], context_added[i]), decide if the extra contextual sentences in context_added[i] are relevant:
+       - If they fail the trim criteria below, remove them.
+       - If they pass, keep them in place.
+       - If *all* of the added context is removed, you revert to using just the original_extract text.
+    2. Apply the following exclusion criteria and exclusion examples to the appended context:
+
+        Exclusion criteria:
+       - The context added is not relevant to the original extract.
+       - The context added is not a scientific explanation of the mechanism for bird flu transmission.
+       - The context added is not a statement about the future potential for bird flu to become more transmissible to humans.
+
+        Exclusion examples:
+
+      Original extract: "The virus would have to go through genetic changes that allow it to better bind to human receptors for it to start spreading between people, Adalja explained."
+      Context added: "If you are worried about eating food products from sick animals, know that pasteurized milk is not affected. Cooking your meat to the right temperature will kill off the flu virus if it happens to be there, according to Bowman." [<- Filtered out because this is advice, not a mechanism or explanation for potential increased future transmissibility to humans.]
+
+      Original extract: "The virus would have to go through genetic changes that allow it to better bind to human receptors for it to start spreading between people, Adalja explained."
+      Context added: "If you are worried about eating food products from sick animals, know that pasteurized milk is not affected. Cooking your meat to the right temperature will kill off the flu virus if it happens to be there, according to Bowman." [<- Filtered out because this is advice, not a mechanism or explanation for potential increased future transmissibility to humans.]
+
+      Original extract: "Experts worry about the possibility of an H5N1 pandemic among humans, warning that the lack of clear and timely updates on the outbreak by some federal agencies, including failures to provide updates on the spread of H5N1 in cows and the safety of milk supplies, is reflective of the miscommunication steps at the beginning of the COVID-19 pandemic, The Washington Post reported."
+      Context added: 'This requires multiple agencies to coordinate and communicate internally, but most importantly externally, which doesn't seem to be happening due to different cultures, priorities, legal responsibilities, scientific expertise, and agility,' epidemiologist Katelyn Jetelina, who has closely tracked the avian flu outbreak, told the Post. 'Mix that in with the usual challenges of scientific uncertainty, complexity and, quite frankly global pressure, and you got yourself an utterly, unacceptable mess.' [<- Filtered out because this is a statement about the current situation (policy response), not a mechanism or explanation for potential increased future transmissibility to humans.]
+
+      Original extract: "Redfield said scientists have found that the bird flu virus hasn't yet adapted to spread from humans to humans, but that once it does, 'that's when you're going to have the pandemic.'"
+      Context added: "Redfield said scientists have found that the bird flu virus hasn't yet adapted to spread from humans to humans, but that once it does, 'that's when you're going to have the pandemic.' The Hill reported." [<- Filtered out because "The Hill reported" is not a mechanism or explanation for potential increased future transmissibility to humans.]
+
+      Original extract: "The virus appears to be contained to farms, but there's always a chance it could develop mutations that let it spread between humans. And if that happens, we may have another pandemic on our hands."
+      Context added: "'We've not seen human-to-human transmission to date and that's a saving grace,' Dr. Andrew Bowman, a veterinary epidemiologist at The Ohio State University College of Veterinary Medicine, told HuffPost." [<- Filtered out because this is a statement reassuring about current transmissibility), not a mechanism or explanation or statement about potential increased future transmissibility to humans or pandemic potential.]
+
+    3. After applying the filter, you will have a final set of statements—some may be "original extract only," some may have context.
+    4. Return **one** final statement per pair in the same order they were provided. If a piece of context is irrelevant, remove it; if *all* context is irrelevant, revert to the original extract alone.
+
+    **Output Format Requirements**:
+    ```json
+    {{
+      "statements": [
+        "final trimmed statement 1",
+        "final trimmed statement 2"
+      ],
+      "individual_statements": [
+        {{
+          "statement": "final trimmed statement 1",
+          "statement_id": "affirm_transmissible_statement_trim_1"
+        }},
+        {{
+          "statement": "final trimmed statement 2",
+          "statement_id": "affirm_transmissible_statement_trim_2"
+        }}
+      ]
+    }}
+    ```
+
+    - The `"statements"` array must match `"individual_statements"` in length and content.
+    - For each final statement, the `"statement_id"` must be `"affirm_transmissible_statement_trim_<n>"`, with **ascending** numbering.
+    - No other fields (like `"explanation"`) are allowed in the output.
+    - Combine the original extract + valid context into **one** final statement *per pair*.
+
+    Provided Data:
+    - "original_extract": {original_extract}
+    - "context_added": {context_added}
+
+affirm_transmissible_merge:
+  description: "Merge statements that overlap or repeat"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    You have received a list of statements from the trim phase. Some of these statements may overlap or repeat text verbatim, especially around shared sentences. Your task is to:
+
+    1) Identify any pairs (or groups) of statements that share **at least one entire sentence** (verbatim) in common.
+    2) Merge each group of overlapping statements into a single combined statement by:
+       - Including all unique non-overlapping sentences from each statement in the group.
+       - Retaining the shared (overlapping) sentence(s) only once.
+       - Preserving the original order of sentences as best as possible.
+    3) Statements that do **not** overlap with any other remain standalone, unchanged.
+    4) Output **only** the final set of merged (and standalone) statements. Each final statement must appear exactly once, either merged or standalone.
+
+    **Output Format Requirements:**
+    - Return a JSON object of the form:
+      ```json
+      {{
+        "statements": [
+          "final statement 1",
+          "final statement 2",
+          ...
+        ],
+        "individual_statements": [
+          {{
+            "statement": "final statement 1",
+            "statement_id": "affirm_transmissible_statement_merge_1"
+          }},
+          {{
+            "statement": "final statement 2",
+            "statement_id": "affirm_transmissible_statement_merge_2"
+          }}
+        ]
+      }}
+      ```
+    - The `"statements"` array must be **identical** in length and content to the `"individual_statements"` array.
+    - For each final statement, assign a `"statement_id"` that follows the pattern `"affirm_transmissible_statement_merge_<n>"`, where `<n>` is a sequential integer (1, 2, 3, etc.).
+    - **Do not** include extra fields or explanations.
+
+    Trim Phase Statements to Merge: {trimmed_statements}
 
 
 affirm_transmissible_exclude_1_temporal:
@@ -123,56 +285,103 @@ affirm_transmissible_exclude_1_temporal:
   prompt: |
     You are an extremely thorough analytical assistant.
             
-    Step 1: Systematically exclude any statements that do NOT address or suggest FUTURE potential but rather only address or suggest PRESENT or IMMEDIATE risk.
+    Step 1: Systematically exclude any statements that do NOT address or suggest pandemic potential FUTURE potential increased transmissibility to humans but rather only address or suggest PRESENT or IMMEDIATE risk.
 
     Examples of statements to exclude:
 
-    "The avian influenza strain known as H5N1 is killing an unprecedented number of mating pairs of the national symbol birds, University of Georgia researchers concluded in a study published in Nature's Scientific Reports." <- [Current impact observation or future human implications]
+        Examples of statements to KEEP:
+    "Because human-to-human spread of bird flu poses pandemic potential, each human case is investigated to rule out this type of infection." <- [Mentions 'pandemic potential' explicitly, indicating concern about future transmissibility]
 
-    "This sector of workers is not only at the very, very highest risk because they're having that direct, intimate contact with discharge, raw milk, with infected animals, but they're also at the very, very highest level of risk in terms of having no social safety net." <- [Current risk assessment without future implications]
+    "The lab results need further study to assess their real-world implications, scientists said, as in the past flu viruses that developed the ability to bind to both types have caused human pandemics. These receptors are how flu viruses typically enter and infect human cells in the real world. Bird flu prefers to bind to avian-type receptors only, which are scarce in humans." <- [Mentions 'pandemic potential' explicitly, indicating concern about future transmissibility]
 
-    "Currently, dairy workers are among the people who are most at risk of avian influenza, and many are disempowered migrant workers who face structural barriers to accessing health care." <- [Current risk and access issues, no future implications]
+    "As more animals get infected, there are more opportunities for humans who are exposed to sick animals to get infected, Adalja said. In April 2024, a person tested positive for highly pathogenic avian influenza (HPAI) H5N1 bird flu, making it the first known case of its cow-to-human spread. In May, a few more cases were recorded in people who'd been exposed to infected dairy cows." <- [Mentions first known case of cow-to-human spread, implying that the virus has the potential to evolve and transmit to humans in new ways]
 
-    "Scientists have long worried about the potential for an H5N1 strain to jump into humans and cause a pandemic." <- [States concern without explaining mechanism]
+    "Health authorities are closely watching for any signs that the viruses are evolving to spread easily from person to person, and experts are concerned as more mammal species contract bird flu viruses." <- [Mentions "evolving to spread easily from person to person", indicating concern about future transmissibility]
 
-    "The risk to humans is currently low because the disease has not mutated to spread person-to-person." <- [Current risk with current mechanism only]
+    "The risk to humans is currently low because the disease has not mutated to spread person-to-person." <- [Implies that the virus could mutate to spread person-to-person]
 
     "The viruses that have been detected in cattle and in other animals in these farms don't contain any mutations that would indicate increased transmissibility or pathogenesis to humans." <- [Current genetic assessment only]
 
     "The first signs that H5N1 or any new flu virus was starting to spread from person to person would trigger a race to produce massive amounts of vaccine to try to mitigate the damage a flu pandemic might be expected to cause." <- [Describes response plan rather than transmission mechanism]
 
+    CLARIFICATION:
+    - If a statement explicitly uses words like "pandemic potential," "possible future," or "one day might spread," then it DOES address future risk, even if part of the statement mentions current surveillance or investigation methods.
+
     Step 2: For each statement that PASSES ALL criteria, include it in the output numbered sequentially.
 
     Respond ONLY with a JSON object in the format:
 
-    {
+    {{
       "statements": [
         "statement 1",
         "statement 2"
       ],
       "individual_statements": [
-        {
+        {{
           "statement": "statement 1",
           "statement_id": "affirm_transmissible_statement_exclude_1_temporal_1"
           /* "explanation": "explanation 1" <-- COMMENTED OUT */
-        },
-        {
+        }},
+        {{
           "statement": "statement 2",
           "statement_id": "affirm_transmissible_statement_exclude_1_temporal_2"
           /* "explanation": "explanation 2" <-- COMMENTED OUT */
-        }
+        }}
       ]
-    }
+    }}
 
     Statements to check: {all_statements}
 
+    IMPORTANT: Preserve the numeric suffix from the input statement_id when forming "affirm_transmissible_statement_exclude_1_temporal_<n>". For example, if the input ID was "affirm_transmissible_statement_contextualize_3", you should output "affirm_transmissible_statement_exclude_1_temporal_3" if that statement passes the temporal filter. Do not skip or reindex IDs.
+
+affirm_transmissible_exclude_remainder:
+  description: "Additional content filter, excludes remainder statements (similar to temporal)"
+  prompt: |
+    You are an extremely thorough analytical assistant.
+
+    Step 1: Systematically exclude any statements that do NOT address or suggest pandemic potential FUTURE potential increased transmissibility to humans; or that do NOT address a mechanism for increased future transmissibility or pandemic potential in humans.
+    
+    Example 1: "“With birds that are able to move around and airborne, this disease could spread pretty rapidly if it’s not contained very quickly,” state Sen. Emanuel Jones, whose district covers Henry County, told the station." <- [Spread rapidly among birds? This is not a statement about humans.]
+
+    Example 2: "The avian influenza strain known as H5N1 is killing an unprecedented number of mating pairs of the national symbol birds, University of Georgia researchers concluded in a study published in Nature's Scientific Reports." <- [Current impact observation on birds, not humans.]
+
+    Example 3: "This sector of workers is not only at the very, very highest risk because they're having that direct, intimate contact with discharge, raw milk, with infected animals, but they're also at the very, very highest level of risk in terms of having no social safety net." <- [Current risk assessment without future implications]
+
+    Example 4:"Currently, dairy workers are among the people who are most at risk of avian influenza, and many are disempowered migrant workers who face structural barriers to accessing health care." <- [Current risk and access issues, no future implications]
+
+    Step 2: For each statement that PASSES ALL criteria, include it in the output, numbered sequentially.
+
+    Respond ONLY with a JSON object in the format:
+    {{
+      "statements": [
+        "statement 1",
+        "statement 2"
+      ],
+      "individual_statements": [
+        {{
+          "statement": "statement 1",
+          "statement_id": "affirm_transmissible_statement_exclude_remainder_1"
+        }},
+        {{
+          "statement": "statement 2",
+          "statement_id": "affirm_transmissible_statement_exclude_remainder_2"
+        }}
+      ]
+    }}
+
+    Statements to check: {all_statements}
+
+    IMPORTANT:
+    - Preserve the numeric suffix from the input statement_id when forming "affirm_transmissible_statement_exclude_remainder_<n>". 
+    - For example, if the input ID was "affirm_transmissible_statement_exclude_1_temporal_3", you should output "affirm_transmissible_statement_exclude_remainder_3" if that statement passes this filter.
+    - Do not skip or reindex IDs.
 
 affirm_transmissible_exclude_2_blanket_v_mechanism:
   description: "Mechanism vs blanket statement selector"
   prompt: |
     You are an extremely thorough analytical assistant.
 
-    Step 1: For each statement, determine if it addresses SCIENTIFIC EXPLANATIONS or BIOLOGICAL or EPIDEMIOLOGICAL MECHANISMS explaining WHY or HOW bird flu might develop this potential.
+    Step 1: For each statement, determine if it addresses SCIENTIFIC EXPLANATIONS or BIOLOGICAL or EPIDEMIOLOGICAL MECHANISMS explaining WHY or HOW bird flu might develop this potential. If the statement does not address a mechanism, it should be excluded. If the statement mentions "mutations", "evolves" or "evolving" or "evolution" or implies such things, it should be included.
 
     Step 2: Sort the statements into two lists:
     1. INCLUDED - Statements that provide mechanisms
@@ -190,10 +399,11 @@ affirm_transmissible_exclude_2_blanket_v_mechanism:
     "This sector of workers is not only at the very, very highest risk because they're having that direct, intimate contact with discharge, raw milk, with infected animals, but they're also at the very, very highest level of risk in terms of having no social safety net." <- [Current risk assessment without mechanism]
     "Currently, dairy workers are among the people who are most at risk of avian influenza, and many are disempowered migrant workers who face structural barriers to accessing health care." <- [Current risk and access issues, no mechanism]
     "The first signs that H5N1 or any new flu virus was starting to spread from person to person would trigger a race to produce massive amounts of vaccine to try to mitigate the damage a flu pandemic might be expected to cause." <- [Describes response plan rather than transmission mechanism]
+    "Is this where we're seeing repeated spillovers that one day take off? Or is it like in COVID, where suddenly there's a cluster of human cases and then it's too late?" < [Describes the current situation without mechanism. "Repeated spillovers" is not a mechanism or an explanation.]
 
     Respond with a JSON object in the format:
 
-    {
+    {{
       "mechanism_statements": [
         "mechanism statement 1",
         "mechanism statement 2"
@@ -203,20 +413,22 @@ affirm_transmissible_exclude_2_blanket_v_mechanism:
         "blanket statement 2"
       ],
       "individual_statements": [
-        {
+        {{
           "statement": "mechanism statement 1",
           "statement_id": "affirm_transmissible_statement_exclude_2_mechanism_1"
           /* "explanation": "explanation 1" <-- COMMENTED OUT */
-        },
-        {
+        }},
+        {{
           "statement": "blanket statement 1",
           "statement_id": "affirm_transmissible_statement_exclude_2_blanket_1"
           /* "explanation": "explanation 2" <-- COMMENTED OUT */
-        }
+        }}
       ]
-    }
+    }}
 
     Statements to check: {all_statements}
+
+    IMPORTANT: For any statement that you include under "mechanism_statements," rename its ID from e.g. "affirm_transmissible_statement_exclude_1_temporal_3" to "affirm_transmissible_statement_exclude_2_mechanism_3" (keeping the numeric suffix). For those you put under "blanket_statements," rename its ID to "affirm_transmissible_statement_exclude_2_blanket_3," etc. Again, do not skip or reindex.
 
 
 affirm_transmissible_validate:
@@ -257,43 +469,43 @@ affirm_transmissible_validate:
 
     Respond with a JSON object in the format:
 
-    {
+    {{
         "mechanism_validated": [
-            {
+            {{
                 "statement": "exact source text here",
                 "statement_id": "affirm_transmissible_statement_mechanism_validated_1",
                 "original": "original extracted statement here",
                 "location": "surrounding context"
                 /* "explanation": "explanation 1" <-- COMMENTED OUT */
-            }
+            }}
         ],
         "mechanism_discarded": [
-            {
+            {{
                 "statement": "discarded statement",
                 "statement_id": "affirm_transmissible_statement_mechanism_discarded_1",
                 "reason": "reason for discard"
                 /* "explanation": "explanation 2" <-- COMMENTED OUT */
-            }
+            }}
         ],
         "blanket_validated": [
-            {
+            {{
                 "statement": "exact source text here",
                 "statement_id": "affirm_transmissible_statement_blanket_validated_1",
                 "original": "original extracted statement here",
                 "location": "surrounding context"
                 /* "explanation": "explanation 3" <-- COMMENTED OUT */
-            }
+            }}
         ],
         "blanket_discarded": [
-            {
+            {{
                 "statement": "discarded statement",
                 "statement_id": "affirm_transmissible_statement_blanket_discarded_1",
                 "reason": "reason for discard"
                 /* "explanation": "explanation 4" <-- COMMENTED OUT */
-            }
+            }}
         ],
         "individual_statements": [
-            {
+            {{
                 "statement": "exact or corrected text here",
                 "statement_id": "affirm_transmissible_statement_validation_individual_1",
                 "original": "original text here",
@@ -301,10 +513,12 @@ affirm_transmissible_validate:
                 "validated": true,
                 "reason": "reason for discard if not validated"
                 /* "explanation": "explanation 5" <-- COMMENTED OUT */
-            }
+            }}
         ]
-    }
+    }}
 
     Original Fulltext: {fulltext}
     Mechanism Statements to Validate: {mechanism_statements}
     Blanket Statements to Validate: {blanket_statements}
+
+    IMPORTANT: When you validate each statement, rename its ID from e.g. "affirm_transmissible_statement_exclude_2_mechanism_3" to either "affirm_transmissible_statement_mechanism_validated_3" (if validated) or "affirm_transmissible_statement_mechanism_discarded_3" (if discarded). Do the same for blanket statements: "affirm_transmissible_statement_blanket_validated_#" or "affirm_transmissible_statement_blanket_discarded_#". Keep the numeric suffix the same as the input statement’s numeric suffix.
