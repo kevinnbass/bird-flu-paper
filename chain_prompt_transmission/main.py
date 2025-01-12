@@ -10,6 +10,10 @@ import sys
 import json
 import signal
 import logging
+
+# (CHANGED) Added 're' for get_next_file_number regex matching
+import re  
+
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple, TypedDict
 from dataclasses import dataclass
@@ -93,9 +97,34 @@ def load_existing_output(filename: str) -> Tuple[List[Dict[str, Any]], Dict[str,
     return data, lookup_dict
 
 
+# (CHANGED) New helper to find the next file number
+def get_next_file_number(base_stem: str, output_dir: Path) -> int:
+    """
+    Scan 'output_dir' for files named base_stem_N.jsonl (where N is an integer),
+    returning one greater than the highest N found. If none found, return 1.
+    Example:
+      base_stem = 'transmission_chain'
+      we look for 'transmission_chain_1.jsonl', 'transmission_chain_2.jsonl', etc.
+    """
+    pattern = re.compile(rf"^{re.escape(base_stem)}_(\d+)\.jsonl$")
+    highest_num = 0
+
+    if output_dir.is_dir():
+        for filename in output_dir.iterdir():
+            match = pattern.match(filename.name)
+            if match:
+                num = int(match.group(1))
+                if num > highest_num:
+                    highest_num = num
+
+    return highest_num + 1
+
+
 def get_next_output_file(base_name: str) -> str:
     """
-    Given a base name (like 'output'), generate 'output_1.jsonl', 'output_2.jsonl', etc.
+    Given a base name (like 'outputs/transmission_chain'), generate:
+      'outputs/transmission_chain_1.jsonl',
+      'outputs/transmission_chain_2.jsonl', etc.
     until we find a file that doesn't exist yet.
     """
     counter = 1
@@ -157,6 +186,8 @@ def handle_output_file(output_filename: str, config: ConfigDict) -> Tuple[str, D
         choice2 = input("Create a new output file? [yes/no] ").strip().lower()
         if choice2.startswith('y'):
             base_name = config["files"]["output"]["base_name"]
+            # If you want a purely sequential approach using "get_next_file_number", 
+            # you could do it here, but let's keep your original logic of get_next_output_file:
             output_filename = get_next_output_file(base_name)
             print(f"Using new output file: {output_filename}")
             return output_filename, {}
@@ -170,7 +201,7 @@ def handle_output_file(output_filename: str, config: ConfigDict) -> Tuple[str, D
 
 def main():
     """
-    Main entry point for the script. 
+    Main entry point for the script.
     Orchestrates:
       1. Loading config
       2. Setting up logging
@@ -203,6 +234,25 @@ def main():
 
     # 4) Configure logging
     setup_logging(config)
+
+    # (CHANGED) -----------------------------------------------------------
+    # DETERMINE the "next number" for transmission_chain_n.jsonl, etc.
+    # -----------------------------------------------------------
+    output_dir = Path("outputs")  # or wherever your JSONL files live
+    base_stem = "transmission_chain"
+    next_num = get_next_file_number(base_stem, output_dir)
+    # e.g. if 'transmission_chain_3.jsonl' is highest, next_num = 4
+
+    # (CHANGED) -----------------------------------------------------------
+    # Update config so base, trim, temporal, remainder match "n"
+    # -----------------------------------------------------------
+    config["files"]["output"]["base"] = f"outputs/{base_stem}_{next_num}.jsonl"
+    config["files"]["output"]["excluded_trim"] = f"outputs/transmission_chain_excluded_trim_{next_num}.jsonl"
+    config["files"]["output"]["excluded_temporal"] = f"outputs/transmission_chain_excluded_temporal_{next_num}.jsonl"
+    config["files"]["output"]["excluded_remainder"] = f"outputs/transmission_chain_excluded_remainder_{next_num}.jsonl"
+
+    # Optionally also rename "discarded" if desired:
+    # config["files"]["output"]["discarded"] = f"outputs/transmission_chain_discarded_{next_num}.jsonl"
 
     # 5) Initialize processor with API client, validator, and prompts
     try:

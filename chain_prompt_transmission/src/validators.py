@@ -244,26 +244,24 @@ class InputValidator:
 
     def validate_temporal_response(self, response: Dict[str, Any]) -> Optional[str]:
         """
-        Extra checks for the temporal phase. e.g. ensuring statements mention "future" potential
-        and not strictly present tense.
+        Minimal checks for the temporal phase.
+        We do not override or re-filter LLM decisions here.
         """
         try:
+            # Ensure "statements" is a list
             if not isinstance(response.get("statements", []), list):
                 return "Statements must be a list"
-            
+
+            # Ensure each statement is a non-empty string
             for stmt in response.get("individual_statements", []):
                 if not isinstance(stmt.get("statement"), str):
                     return "Statement must be a string"
                 if not stmt["statement"].strip():
                     return "Statement cannot be empty"
-                # Example check: must have future/potential words
-                text = stmt["statement"].lower()
-                if any(word in text for word in ["current", "currently", "now", "present"]):
-                    return f"Statement contains present-tense indicator: {stmt['statement']}"
-                if not any(word in text for word in ["would", "could", "might", "may", "future", "potential"]):
-                    return f"Statement lacks future/potential phrasing: {stmt['statement']}"
 
+            # No further logic: let the LLM handle everything
             return None
+
         except Exception as e:
             logging.error(f"Temporal validation error: {str(e)}", exc_info=True)
             return str(e)

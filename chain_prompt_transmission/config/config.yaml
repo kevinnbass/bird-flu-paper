@@ -7,14 +7,14 @@ api:
   base_url: "https://api.deepseek.com"
 
 files:
-  input: "distribution_set_final_deepseek.jsonl"
+  input: "inputs/distribution_set_final_deepseek.jsonl"
   output:
-    base_name: "transmission_chain"
-    base: "transmission_chain.jsonl"
-    discarded: "transmission_chain_discarded.jsonl"
-    excluded_trim: "transmission_chain_excluded_trim.jsonl"
-    excluded_temporal: "transmission_chain_excluded_temporal.jsonl"
-    excluded_remainder: "transmission_chain_excluded_remainder.jsonl"
+    base_name: "outputs/transmission_chain"
+    base: "outputs/transmission_chain.jsonl"
+    discarded: "outputs/transmission_chain_discarded.jsonl"
+    excluded_trim: "outputs/transmission_chain_excluded_trim.jsonl"
+    excluded_temporal: "outputs/transmission_chain_excluded_temporal.jsonl"
+    excluded_remainder: "outputs/transmission_chain_excluded_remainder.jsonl"
   
 logging:
   filename: "logs/processing_deepseek.log"
@@ -23,5 +23,5 @@ logging:
 
 processing:
   id_range:
-    min: 0
-    max: 2033
+    min: 2024
+    max: 2026

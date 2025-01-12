@@ -164,9 +164,6 @@ affirm_transmissible_contextualize:
 
     5. Failure to produce a 1:1 correspondence between the extracts and the contextualized statements (same item count and IDs) violates these instructions.
 
-
-
-
 affirm_transmissible_trim:
   description: "Remove unneeded added context from contextualized statements"
   prompt: |
@@ -279,30 +276,16 @@ affirm_transmissible_merge:
 
     Trim Phase Statements to Merge: {trimmed_statements}
 
-
 affirm_transmissible_exclude_1_temporal:
   description: "Temporal exclusion of statements"
   prompt: |
     You are an extremely thorough analytical assistant.
             
-    Step 1: Systematically exclude any statements that do NOT address or suggest pandemic potential FUTURE potential increased transmissibility to humans but rather only address or suggest PRESENT or IMMEDIATE risk.
+    Step 1: Systematically exclude any statements that do NOT address or suggest pandemic potential or potential increased transmissibility to humans but rather only address or suggest PRESENT or IMMEDIATE risk.
 
     Examples of statements to exclude:
 
-        Examples of statements to KEEP:
-    "Because human-to-human spread of bird flu poses pandemic potential, each human case is investigated to rule out this type of infection." <- [Mentions 'pandemic potential' explicitly, indicating concern about future transmissibility]
-
-    "The lab results need further study to assess their real-world implications, scientists said, as in the past flu viruses that developed the ability to bind to both types have caused human pandemics. These receptors are how flu viruses typically enter and infect human cells in the real world. Bird flu prefers to bind to avian-type receptors only, which are scarce in humans." <- [Mentions 'pandemic potential' explicitly, indicating concern about future transmissibility]
-
-    "As more animals get infected, there are more opportunities for humans who are exposed to sick animals to get infected, Adalja said. In April 2024, a person tested positive for highly pathogenic avian influenza (HPAI) H5N1 bird flu, making it the first known case of its cow-to-human spread. In May, a few more cases were recorded in people who'd been exposed to infected dairy cows." <- [Mentions first known case of cow-to-human spread, implying that the virus has the potential to evolve and transmit to humans in new ways]
-
-    "Health authorities are closely watching for any signs that the viruses are evolving to spread easily from person to person, and experts are concerned as more mammal species contract bird flu viruses." <- [Mentions "evolving to spread easily from person to person", indicating concern about future transmissibility]
-
-    "The risk to humans is currently low because the disease has not mutated to spread person-to-person." <- [Implies that the virus could mutate to spread person-to-person]
-
-    "The viruses that have been detected in cattle and in other animals in these farms don't contain any mutations that would indicate increased transmissibility or pathogenesis to humans." <- [Current genetic assessment only]
-
-    "The first signs that H5N1 or any new flu virus was starting to spread from person to person would trigger a race to produce massive amounts of vaccine to try to mitigate the damage a flu pandemic might be expected to cause." <- [Describes response plan rather than transmission mechanism]
+    "The current public health risk is low." <- [Current risk only]
 
     CLARIFICATION:
     - If a statement explicitly uses words like "pandemic potential," "possible future," or "one day might spread," then it DOES address future risk, even if part of the statement mentions current surveillance or investigation methods.
